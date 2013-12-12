@@ -1,6 +1,6 @@
 # PushoverSender
 
-TODO: Write a gem description
+Send push notifications via Pushover, nice and easy.
 
 ## Installation
 
@@ -16,9 +16,17 @@ Or install it yourself as:
 
     $ gem install pushover_sender
 
+## Config
+
+    $ cat ~/.pushover-sender.yml
+
+    ---
+    user_key: <PUSHOVER_USER_KEY>
+    api_token: <PUSHOVER_API_TOKEN>
+
 ## Usage
 
-TODO: Write usage instructions here
+    $ pushover-sender --title '<title of message>' "<message to send>"
 
 ## Contributing
 
