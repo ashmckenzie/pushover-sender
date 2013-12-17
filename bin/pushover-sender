@@ -4,6 +4,7 @@ lib = File.expand_path('../../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'pushover_sender'
+require 'pushover_sender/config'
 require 'pushover_sender/command'
 
 PushoverSender::Command.run

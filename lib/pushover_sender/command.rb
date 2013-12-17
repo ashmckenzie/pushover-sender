@@ -11,23 +11,11 @@ module PushoverSender
 
     def execute
       Pushover.configure do |c|
-        c.user  = config.user_key
-        c.token = config.api_token
+        c.user  = PushoverSender::Config.instance.user_key
+        c.token = PushoverSender::Config.instance.api_token
       end
 
       Pushover.notification(title: title, message: message)
     end
-
-    private
-
-      def config
-        @config ||= begin
-          Hashie::Mash.new(YAML.load_file(config_file))
-        end
-      end
-
-      def config_file
-        File.expand_path(File.join(ENV['HOME'], '.pushover-sender.yml'))
-      end
   end
 end
