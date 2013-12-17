@@ -15,7 +15,7 @@ module PushoverSender
         c.token = PushoverSender::Config.instance.api_token
       end
 
-      Pushover.notification(title: title, message: message)
+      Notification.new(title, message).send!
     end
   end
 end
