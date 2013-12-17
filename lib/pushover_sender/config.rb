@@ -1,8 +1,3 @@
-require 'delegate'
-require 'hashie'
-require 'yaml'
-require 'singleton'
-
 module PushoverSender
   class Config < SimpleDelegator
 

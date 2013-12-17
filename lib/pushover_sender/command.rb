@@ -10,12 +10,7 @@ module PushoverSender
     parameter 'message', 'Message content', required: true
 
     def execute
-      Pushover.configure do |c|
-        c.user  = PushoverSender::Config.instance.user_key
-        c.token = PushoverSender::Config.instance.api_token
-      end
-
-      Notification.new(title, message).send!
+      Notification.new.notify!(title, message)
     end
   end
 end
